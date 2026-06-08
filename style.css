@@ -1,0 +1,65 @@
+:root {
+        --blue: #0066FF;
+}
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-page .search-button {
+        font-size: 1rem;
+        display: block;
+        width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+
+        border-radius: 50px;
+        background-color: #D9D9D9;
+        text-align: center;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+}
+
+.add-ulam-button {
+        font-size: 1rem;
+        display: block;
+        width: 95%;
+        margin: auto 10px;
+        padding: 10px;
+        border: none;
+
+        border-radius: 4px;
+        background-color: var(--blue);
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+}
+
+.add-ulam-page header {
+        margin: 10px;
+        padding: 10px;
+}
+
+.add-ulam-page form {
+        font-size: 1rem;
+        display: block;
+        width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+        border: none;
+}
+
+.add-ulam-page input, .add-ulam-page textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 8px;
+}
+
+.add-ulam-page button {
+        width: 100%;
+        margin: 0;
+}
