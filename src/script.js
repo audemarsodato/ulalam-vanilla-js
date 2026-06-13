@@ -1,5 +1,10 @@
 
-export let ulams = []
+export let ulams = JSON.parse(localStorage.getItem("ulams")) || [] // get only once 
+
+export function addUlam(ulam) {
+        ulams.push(ulam)
+        localStorage.setItem('ulams', JSON.stringify(ulams))
+}
 
 // Mismwa
 
