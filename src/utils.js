@@ -1,18 +1,18 @@
 
-export function toArray(text) {
-        let word = ''
+export function toArray(text) { 
+        let line = ''
         let array = []
         for (let i = 0; i < text.length; i++) {
-                if (text[i] === '\n' || text[i] === ' ') {
-                        array.push(word)
-                        word = ''
+                if (text[i] === '\n') {
+                        array.push(line)
+                        line = ''
                         continue
                 }
 
-                word += text[i]
+                line += text[i]
 
                 if (i + 1 === text.length) {
-                        array.push(word)
+                        array.push(line)
                 }
         }
         return array

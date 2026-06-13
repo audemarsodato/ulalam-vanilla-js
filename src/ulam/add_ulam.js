@@ -1,4 +1,5 @@
-import { toArray } from "./utils.js"
+import { toArray } from "../utils.js"
+import { ulams } from "../script.js"
 
 const form = document.querySelector('form')
 const ulamName = document.getElementById('ulam-name')
@@ -15,6 +16,7 @@ form.onsubmit = (event) => {
         if (!steps.value) invalidInputs.push('steps')
 
         if (invalidInputs.length > 0) {
+                alert(invalidInputs)
                 return
         }
 
@@ -24,7 +26,12 @@ form.onsubmit = (event) => {
                 steps: toArray(steps.value)
         }
 
-        ulamName.value = ''
-        ingredients.value =''
-        steps.value = ''
+        ulams.push(ulam)
+        localStorage.setItem('ulams', JSON.stringify(ulams))
+
+        // ulamName.value = ''
+        // ingredients.value =''
+        // steps.value = ''
+
+        window.location.href = "../index.html"
 }
