@@ -18,5 +18,3 @@ function ulamEl(ulam) {
                 </div>
         `
 }
-
-// commit add display ulam in home page
