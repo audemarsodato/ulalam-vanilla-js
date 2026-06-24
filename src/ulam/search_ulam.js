@@ -6,7 +6,7 @@ const inputIngredient = document.getElementById('ingredient')
 const availableIngredientsContainer = document.getElementById('available-ingredients-container')
 const matchedUlamsContainer = document.getElementById('matched-ulams')
 
-let ingredients = getIngredients()
+const ingredients = getIngredients()
 let ingredientsNaMeron = []
 // let unknownIngredients = []
 let matchedUlams = []
@@ -16,7 +16,8 @@ appendIngredientsDatalist()
 searchForm.onsubmit = (event) => {
         event.preventDefault()
 
-        let ingredient = inputIngredient.value
+        // TODO: when processing, use toLower() to prevent case mismatch and use capitalize() when storing and displaying
+        let ingredient = inputIngredient.value.trim() // trim() removes spaces from input
 
         if (!ingredients.includes(ingredient)) {
                 inputIngredient.value = ''
@@ -34,7 +35,7 @@ searchForm.onsubmit = (event) => {
         ingredientsNaMeron.push(ingredient)
         displayAvailableIngredients()
         
-        getMatchedUlams()
+        matchedUlams = getMatchedUlams()
         displayMatchedUlams()
 
         if (ingredientsNaMeron.length !== 0) {
@@ -75,34 +76,36 @@ function displayMatchedUlams() {
 }
 
 function getMatchedUlams() {
-        matchedUlams = [] // empty the array first before adding new matched ulams 
+        let matchedUlams = [] // empty the array first before adding new matched ulams 
         for (const ulam of ulams) {
                 let matchCount = 0
 
-                for (const ingredient of ingredientsNaMeron) {
-                        if (ulam.ingredients.includes(ingredient)) {
+                for (const ingredient of ulam.ingredients) { // more readable
+                        if (ingredientsNaMeron.includes(ingredient)) {
                                 matchCount ++
                         }
                 }
+
+                /*
+                        Similar performance (both O(a × b)).
+                        Use Set.has() instead of Array.includes()
+                        when the dataset becomes large.
+                */
+                
+                // for (const ingredient of ingredientsNaMeron) { // less readbale
+                //         if (ulam.ingredients.includes(ingredient)) {
+                //                 matchCount ++
+                //         }
+                // }
                 
                 if (matchCount > 0) {
                         matchedUlams.push({
-                                name: ulam.name,
+                                ...ulam,
                                 matchCount
                         })
                 }
         }
-
-        // matchedUlams = ulams.map(ulam => {
-        //         const matchCount = ulam.ingredients.filter(ingredient => 
-        //                 ingredientsNaMeron.includes(ingredient)
-        //         ).length
-
-        //         return {
-        //                 name: ulam.name,
-        //                 matchCount
-        //         }
-        // }).filter(ulam => ulam.matchCount > 0)
+        return matchedUlams.sort((a, b) => b.matchCount - a.matchCount)
 }
 
 availableIngredientsContainer.addEventListener('click', (event) => {
@@ -115,13 +118,7 @@ availableIngredientsContainer.addEventListener('click', (event) => {
                 availableIngredientsContainer.style.display = 'none'
         }
 
-        getMatchedUlams()
+        matchedUlams = getMatchedUlams()
         displayAvailableIngredients()
         displayMatchedUlams()
 })
-
-// use datalist to auto suggest ingredients that already exist
-// check if the typed ingredients is in the ingredients already
-        // disable button when no match
-// once added, display the available ingredients
-// filter the ulam using the available ingredients
