@@ -1,6 +1,7 @@
 :root {
         --blue: #0066FF;
         --gray: #E5E7EB;
+        --border-color: #d3d3d3;
 }
 
 * {
@@ -12,13 +13,14 @@
 
 body {
         background-color: var(--gray);
+        max-width: 480px;
+        margin: auto;
 }
 
 /* Home page */
 .home-page {
         margin: auto;
-        width: 95%;
-        padding: 16px 8px;
+        padding: 16px 10px;
 }
 
 .home-page .search-button {
@@ -50,7 +52,7 @@ body {
         font-weight: 500;
 }
 
-.add-ulam-page header {
+.add-ulam-page header, .search-page header {
         margin: 10px;
         padding: 10px;
 }
@@ -58,7 +60,6 @@ body {
 .add-ulam-page form {
         font-size: 1rem;
         display: block;
-        width: 95%;
         padding: 10px;
         margin: 10px auto;
         border: none;
@@ -78,10 +79,73 @@ body {
         margin: 0;
 }
 
+.search-page form {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+}
+
+.search-page form input {
+        padding: 10px 16px;
+        width: 100%;
+        border: none;
+        
+        border-radius: 16px;
+}
+
+.search-page form button {
+        padding: 10px 16px;
+        border: none;
+
+        border-radius: 16px;
+        background-color: var(--blue);
+        color: #fff;
+        font-weight: 900;
+}
+
+.search-page .available-ingredients-container {
+        display: none;
+        padding: 10px;
+        margin-top: 10px;
+
+        background-color: #fff;
+        border-top: 2px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
+}
+
+.search-page .available-ingredient {
+        display: inline-block;
+        padding: 5px 5px 5px 10px;
+        margin-bottom: 5px;
+
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+}
+
+.search-page .available-ingredient .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+}
+
+.search-page .available-ingredient .content button {
+        padding: 0 5px;
+
+        background-color: rgba(0,0,0,0);
+        border: none;
+}
+
+.search-page .matched-ulams {
+        padding: 0 10px;
+}
+
 /* Ulams */
 .ulams {
         margin: 10px 0;
-        border-top: 1px solid #d3d3d3;
+        border-top: 1px solid var(--border-color);
 
 }
 
@@ -92,5 +156,5 @@ body {
         border-radius: 8px;
         background-color: #fff;
         /* box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2); */
-        border: 2px solid #d3d3d3;
+        border: 2px solid var(--border-color);
 }

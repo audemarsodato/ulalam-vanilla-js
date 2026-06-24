@@ -8,7 +8,21 @@
 </head>
 <body>
         <div class="search-page">
-                <input type="text" name="" id="">
+                <header>
+                        <a href="../index.html"><span>go back</span></a>
+                </header>
+
+                <section class="search-container">
+                        <form id="search-form">
+                                <input type="text" placeholder="Ano pang ingredients meron?" id="ingredient">
+                                <button type="submit">+</button>
+                        </form>
+                        <div class="available-ingredients-container" id="available-ingredients-container"></div>
+                        <section class="matched-ulams" id="matched-ulams"></section>
+                </section>
         </div>
+
+        <script type="module" src="../src/script.js"></script>
+        <script type="module" src="../src/ulam/search_ulam.js"></script>
 </body>
 </html>
