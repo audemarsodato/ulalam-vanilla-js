@@ -1,9 +1,5 @@
 import { ulams } from '../script.js'
 
-// get the ulamm name form the url parameter
-// get the whole ulam object from the ulams using the ulamName
-// display the details of the ulam
-
 const params = new URLSearchParams(location.search)
 let ulamName = params.get('ulamName')
 

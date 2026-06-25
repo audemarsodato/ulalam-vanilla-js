@@ -18,3 +18,7 @@ export function toArray(text) {
         }
         return array
 }
+
+export function capitlize(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1)
+}

@@ -35,7 +35,6 @@ form.onsubmit = (event) => {
         }
 
         updateUlam(ulam, selectedUlam.name)
-        // addUlam(ulam)
 
         window.location.href = "../index.html"
 }

@@ -1,4 +1,5 @@
 import { getIngredients, ulams } from '../script.js'
+import { capitlize } from '../utils.js'
 
 const searchForm = document.getElementById('search-form')
 const inputIngredient = document.getElementById('ingredient')
@@ -16,9 +17,8 @@ appendIngredientsDatalist()
 searchForm.onsubmit = (event) => {
         event.preventDefault()
 
-        // TODO: when processing, use toLower() to prevent case mismatch and use capitalize() when storing and displaying
         // TODO: capitalize the input, sibuyas is not the same as Sibuyas
-        let ingredient = inputIngredient.value.trim() // trim() removes spaces from input
+        let ingredient = capitlize(inputIngredient.value.trim()) // trim() removes spaces from input
 
         if (!ingredients.includes(ingredient)) {
                 inputIngredient.value = ''
