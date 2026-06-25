@@ -1,11 +1,10 @@
-import { ulams, updateUlams } from '../script.js'
+import { ulams, updateUlam, deleteUlam } from '../script.js'
 import { toArray } from '../utils.js'
 
 const form = document.querySelector('form')
 const ulamNameInput = document.getElementById('ulam-name')
 const ingredients = document.getElementById('ingredients')
 const steps = document.getElementById('steps')
-
 
 const params = new URLSearchParams(location.search)
 let ulamName = params.get('ulamName')
@@ -35,8 +34,17 @@ form.onsubmit = (event) => {
                 steps: toArray(steps.value)
         }
 
-        updateUlams(ulam, selectedUlam.name)
+        updateUlam(ulam, selectedUlam.name)
         // addUlam(ulam)
+
+        window.location.href = "../index.html"
+}
+
+const deleteUlamButton = document.getElementById('delete-ulam-button')
+deleteUlamButton.onclick = (event) => {
+        event.preventDefault()
+
+        deleteUlam(selectedUlam)
 
         window.location.href = "../index.html"
 }

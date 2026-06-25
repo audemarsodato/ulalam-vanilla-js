@@ -11,7 +11,7 @@ export function addUlam(ulam) {
         update its content
         this changes the ulam inside the ulams initself
 */
-export function updateUlams(ulam, originalName) {
+export function updateUlam(ulam, originalName) {
         for (let i = 0; i < ulams.length; i++) {
                 if (ulams[i].name === originalName) {
                         ulams[i] = ulam
@@ -31,6 +31,11 @@ export function updateUlams(ulam, originalName) {
                 .map function aims to transform every item and return a new array.
         */
 
+        localStorage.setItem('ulams', JSON.stringify(ulams))
+}
+
+export function deleteUlam(ulamToDelete) {
+        ulams = ulams.filter(ulam => ulam !== ulamToDelete)
         localStorage.setItem('ulams', JSON.stringify(ulams))
 }
 
