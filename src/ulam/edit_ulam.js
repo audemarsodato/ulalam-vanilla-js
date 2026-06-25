@@ -43,8 +43,9 @@ const deleteUlamButton = document.getElementById('delete-ulam-button')
 deleteUlamButton.onclick = (event) => {
         event.preventDefault()
 
-        // TODO: Add confirmation before deleting
-
+        if (!confirm(`Sure ka delete mo lutong ulam na ${selectedUlam.name}?`)) {
+                return
+        }
         deleteUlam(selectedUlam)
 
         window.location.href = "../index.html"
