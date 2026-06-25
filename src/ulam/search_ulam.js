@@ -17,7 +17,6 @@ appendIngredientsDatalist()
 searchForm.onsubmit = (event) => {
         event.preventDefault()
 
-        // TODO: capitalize the input, sibuyas is not the same as Sibuyas
         let ingredient = capitlize(inputIngredient.value.trim()) // trim() removes spaces from input
 
         if (!ingredients.includes(ingredient)) {

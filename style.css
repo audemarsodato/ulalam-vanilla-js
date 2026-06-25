@@ -64,15 +64,14 @@ textarea {
 
 /* Add ulam page & Edit ulam page*/
 .add-ulam-page header, .search-page header, .ulam-profile-page header, .edit-ulam-page header {
-        margin: 10px;
-        padding: 10px;
+        padding: 16px 16px 8px 16px;
 }
 
 .add-ulam-page form, .edit-ulam-page form {
         font-size: 1rem;
         display: block;
         padding: 10px;
-        margin: 10px auto;
+        margin: auto;
         border: none;
 }
 
@@ -80,6 +79,7 @@ textarea {
         width: 100%;
         margin: 10px 0;
         padding: 8px;
+        line-height: 1.5;
         /* border-radius: 4px; */
 
         /* background-color: #f7f7f7; */

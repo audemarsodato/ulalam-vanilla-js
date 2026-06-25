@@ -43,6 +43,8 @@ const deleteUlamButton = document.getElementById('delete-ulam-button')
 deleteUlamButton.onclick = (event) => {
         event.preventDefault()
 
+        // TODO: Add confirmation before deleting
+
         deleteUlam(selectedUlam)
 
         window.location.href = "../index.html"
