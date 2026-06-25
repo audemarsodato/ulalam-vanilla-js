@@ -21,6 +21,33 @@ export function getIngredients() {
         return ingredients
 }
 
+/* DYNAMIC LINK NAVIGATION */
+const ulamsEl = document.getElementById('ulams')
+const ulamsElSearchPage = document.getElementById('matched-ulams')
+
+if (ulamsEl) {
+        ulamsEl.addEventListener('click', (event) => {
+                redirectToProfile(event)
+        })
+}
+
+if (ulamsElSearchPage) {
+        ulamsElSearchPage.addEventListener('click', (event) => {
+                redirectToProfile(event)
+        })
+}
+
+function redirectToProfile(event) {
+        const ulam = event.target.closest('.ulam')
+
+        if (!ulam) return
+        
+        let ulamName = ulam.dataset.ulam
+        
+        // redirect using location href
+        window.location.href = `/pages/ulam_profile_page.html?ulamName=${encodeURIComponent(ulamName)}`
+}
+
 // Mismwa
 
 // Sibuyas

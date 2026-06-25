@@ -52,7 +52,8 @@ body {
         font-weight: 500;
 }
 
-.add-ulam-page header, .search-page header {
+/* Add ulam page */
+.add-ulam-page header, .search-page header, .ulam-profile-page header {
         margin: 10px;
         padding: 10px;
 }
@@ -79,6 +80,7 @@ body {
         margin: 0;
 }
 
+/* Search ulam page */
 .search-page form {
         padding: 0 10px;
         display: flex;
@@ -136,6 +138,8 @@ body {
 
         background-color: rgba(0,0,0,0);
         border: none;
+
+        cursor: pointer;
 }
 
 .search-page .matched-ulams {
@@ -157,4 +161,54 @@ body {
         background-color: #fff;
         /* box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2); */
         border: 2px solid var(--border-color);
+
+        cursor: pointer;
+}
+
+/* Ulam Profile */
+.ulam-profile-page .ulam-profile {
+        padding: 20px;
+        border-top: 2px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
+
+        background-color: #fff;
+}
+
+.ulam-profile-page .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.ulam-profile-page .ulam-title {
+        font-size: 18px;
+}
+
+.ulam-profile-page .ingredients-container {
+        padding: 10px 0 5px 0;
+}
+
+.ulam-profile-page .ingredients-container p {
+        margin-bottom: 8px;
+}
+
+.ulam-profile-page .ingredient {
+        display: block;
+        padding: 0 0 5px 32px;
+}
+
+.ulam-profile-page .steps-container {
+        padding-top: 5px;
+}
+
+.ulam-profile-page .steps-container p {
+        margin-bottom: 8px;
+}        
+
+.ulam-profile-page ol {
+        padding-left: 3rem;
+}
+
+.ulam-profile-page ol li {
+        padding-bottom: 5px;
 }

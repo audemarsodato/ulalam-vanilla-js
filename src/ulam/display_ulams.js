@@ -12,7 +12,7 @@ ulamList.innerHTML = ulamsHTML
 
 function ulamEl(ulam) {
         return `
-                <div class="ulam">
+                <div class="ulam" data-ulam="${ulam.name}">
                         <h4>${ulam.name}</h4>
                         <p>Ingredients ${ulam.ingredients.length}, Steps ${ulam.steps.length}</p>
                 </div>

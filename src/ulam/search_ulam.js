@@ -17,6 +17,7 @@ searchForm.onsubmit = (event) => {
         event.preventDefault()
 
         // TODO: when processing, use toLower() to prevent case mismatch and use capitalize() when storing and displaying
+        // TODO: capitalize the input, sibuyas is not the same as Sibuyas
         let ingredient = inputIngredient.value.trim() // trim() removes spaces from input
 
         if (!ingredients.includes(ingredient)) {
@@ -68,7 +69,7 @@ function displayAvailableIngredients() {
 
 function displayMatchedUlams() {
         matchedUlamsContainer.innerHTML = matchedUlams.map(ulam => `
-                <div class="ulam">
+                <div class="ulam" data-ulam="${ulam.name}">
                         <h4>${ulam.name}</h4>
                         <p>${ulam.matchCount} matches</p>
                 </div>        
