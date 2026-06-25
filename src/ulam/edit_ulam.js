@@ -49,3 +49,6 @@ deleteUlamButton.onclick = (event) => {
 
         window.location.href = "../index.html"
 }
+
+const goBackButton = document.getElementById('go-back-button')
+goBackButton.href = `/pages/ulam_profile_page.html?ulamName=${encodeURIComponent(ulamName)}`
