@@ -17,6 +17,10 @@ body {
         margin: auto;
 }
 
+textarea {
+        resize: vertical;
+}
+
 /* Home page */
 .home-page {
         margin: auto;

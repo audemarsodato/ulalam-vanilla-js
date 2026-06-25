@@ -6,6 +6,34 @@ export function addUlam(ulam) {
         localStorage.setItem('ulams', JSON.stringify(ulams))
 }
 
+/*
+        find the specific ulam using index or .map()
+        update its content
+        this changes the ulam inside the ulams initself
+*/
+export function updateUlams(ulam, originalName) {
+        for (let i = 0; i < ulams.length; i++) {
+                if (ulams[i].name === originalName) {
+                        ulams[i] = ulam
+                }
+        }
+
+        // ulams = ulams.map(currentUlam => {
+        //         if (currentUlam.name === ulam.name) {
+        //                 return ulam
+        //         }
+        //         return currentUlam
+        // })
+
+        /*
+                For loop is better here because we are looking for one specific item
+                to transform and not transforming every item.
+                .map function aims to transform every item and return a new array.
+        */
+
+        localStorage.setItem('ulams', JSON.stringify(ulams))
+}
+
 export function getIngredients() {
         let ingredients = []
 

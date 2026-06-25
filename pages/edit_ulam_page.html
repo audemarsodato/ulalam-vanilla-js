@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <title>Ulalam</title>
+</head>
+<body>
+        <div class="add-ulam-page">
+                <header>
+                        <a href="../index.html"><span>go back</span></a>
+                </header>
+
+                <form>
+                        <label>Name ng ulam</label>
+                        <br>
+                        <input type="text" id="ulam-name" required>
+                        <br>
+                        <label>Ingredients</label>
+                        <br>
+                        <textarea rows="5" id="ingredients" required placeholder="Sibuyas 
+bawang"></textarea>
+                        <br>
+                        <label>Instructions</label>
+                        <br>
+                        <textarea rows="5" id="steps" required placeholder="Hiwa mga rekados
+Gisa ng bawang sibuyas"></textarea>
+                        <br>
+                        <!-- <button class="delete-ulam-button">DELETE</button> -->
+                        <button class="add-ulam-button">SAVE</button>
+                </form>
+        </div>
+
+        <script type="module" src="../src/script.js"></script>
+        <script type="module" src="../src/utils.js"></script>
+        <script type="module" src="../src/ulam/edit_ulam.js"></script>
+</body>
+</html>

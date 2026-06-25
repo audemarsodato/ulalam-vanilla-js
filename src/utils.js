@@ -1,4 +1,5 @@
 
+// TODO: trim to remove spaces, if a space we remove or skip it
 export function toArray(text) { 
         let line = ''
         let array = []

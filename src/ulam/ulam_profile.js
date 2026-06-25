@@ -28,3 +28,8 @@ const stepsContainer = document.getElementById('steps')
 stepsContainer.innerHTML = selectedUlam.steps.map(step => `
         <li class="step">${step}</li>
 `).join('')
+
+const editButton = document.getElementById('edit-button')
+editButton.addEventListener('click', (event) => {
+        window.location.href = `/pages/edit_ulam_page.html?ulamName=${encodeURIComponent(ulamName)}`
+})
