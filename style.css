@@ -1,5 +1,6 @@
 :root {
         --blue: #0066FF;
+        --red: #de1a00;
         --gray: #E5E7EB;
         --border-color: #d3d3d3;
 }
@@ -56,13 +57,13 @@ textarea {
         font-weight: 500;
 }
 
-/* Add ulam page */
-.add-ulam-page header, .search-page header, .ulam-profile-page header {
+/* Add ulam page & Edit ulam page*/
+.add-ulam-page header, .search-page header, .ulam-profile-page header, .edit-ulam-page header {
         margin: 10px;
         padding: 10px;
 }
 
-.add-ulam-page form {
+.add-ulam-page form, .edit-ulam-page form {
         font-size: 1rem;
         display: block;
         padding: 10px;
@@ -70,7 +71,7 @@ textarea {
         border: none;
 }
 
-.add-ulam-page input, .add-ulam-page textarea {
+.add-ulam-page input, .add-ulam-page textarea, .edit-ulam-page input, .edit-ulam-page textarea {
         width: 100%;
         margin: 10px 0;
         padding: 8px;
@@ -79,9 +80,25 @@ textarea {
         /* background-color: #f7f7f7; */
 }
 
-.add-ulam-page button {
+.add-ulam-page button, .edit-ulam-page button {
         width: 100%;
         margin: 0;
+}
+
+.edit-ulam-page .delete-ulam-button {
+        font-size: 1rem;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        margin-bottom: 5px;
+
+        border-radius: 4px;
+        background-color: var(--red);
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
 }
 
 /* Search ulam page */
