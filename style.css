@@ -57,6 +57,11 @@ textarea {
         font-weight: 500;
 }
 
+.home-page .no-ulams-prompt {
+        text-align: center;
+        margin-top: 5px;
+}
+
 /* Add ulam page & Edit ulam page*/
 .add-ulam-page header, .search-page header, .ulam-profile-page header, .edit-ulam-page header {
         margin: 10px;
