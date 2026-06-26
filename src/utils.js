@@ -5,7 +5,7 @@ export function toArray(text) {
         let array = []
         for (let i = 0; i < text.length; i++) {
                 if (text[i] === '\n') {
-                        array.push(line)
+                        array.push(line.trim()) // trim() removes spaces from the beggining and end
                         line = ''
                         continue
                 }
