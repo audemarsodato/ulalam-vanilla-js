@@ -13,7 +13,7 @@ export function toArray(text) {
                 line += text[i]
 
                 if (i + 1 === text.length) {
-                        array.push(line)
+                        array.push(line.trim())
                 }
         }
         return array
