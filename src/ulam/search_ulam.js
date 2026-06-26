@@ -14,10 +14,16 @@ let matchedUlams = []
 
 appendIngredientsDatalist()
 
+/* 
+        Instead of pushing the entered ingredient,
+        we use it to find and get the actall ingredient from the ingredients array,
+        then that is what we push to the ingredients na meron.
+*/
 searchForm.onsubmit = (event) => {
         event.preventDefault()
 
-        let ingredient = capitlize(inputIngredient.value.trim()) // trim() removes spaces from input
+        let enteredIngredient = inputIngredient.value.trim().toLowerCase() // trim() removes spaces from input
+        let ingredient = ingredients.find(ingredient => ingredient.toLowerCase() === enteredIngredient)
 
         if (!ingredients.includes(ingredient)) {
                 inputIngredient.value = ''
